@@ -1,0 +1,65 @@
+//2741
+#include <stdio.h>
+
+main() {
+	int i;
+	int n;
+
+	scanf_s("%d", &n);
+
+	for (i = 1; i <= n; i++) {
+		printf("%d\n", i);
+	}
+	return 0;
+}
+
+
+//2742
+#include <stdio.h>
+
+main() {
+	int i;
+	int n;
+
+	scanf_s("%d", &n);
+
+	for (i = 0; n > i; n--) {
+		printf("%d\n", n);
+	}
+	return 0;
+}
+
+
+//11021
+#include <stdio.h>
+
+main() {
+	int i;
+	int n;
+	int a, b;
+
+	scanf_s("%d\n", &n);
+
+	for (i = 0; i < n; i++) {
+		scanf_s("%d %d\n", &a, &b);
+		printf("Case #%d: %d\n", i + 1, a + b);
+	}
+}
+
+
+//11022
+#include <stdio.h>
+
+main() {
+	int i;
+	int n;
+	int a, b;
+
+	scanf_s("%d\n", &n);
+
+	for (i = 1; i <= n; i++) {
+		scanf_s("%d %d\n", &a, &b);
+		printf("Case #%d: %d + %d = %d\n",i,a,b, a + b);
+	}
+	return 0;
+}
