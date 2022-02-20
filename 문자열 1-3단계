@@ -1,4 +1,5 @@
 // 11654
+
 #include <stdio.h>
 #include <string.h>
 
@@ -11,6 +12,7 @@ main() {
 
 
 //11720
+
 #include<stdio.h>
 
 main() {
@@ -34,6 +36,7 @@ main() {
 
 
 //10809
+
 #include <stdio.h>
 
 main()
