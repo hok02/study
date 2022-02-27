@@ -1,0 +1,91 @@
+//2675
+
+#include<stdio.h>
+#include<string.h>
+
+main() {
+	int n = 0;
+	int i = 0;
+	int b = 0;
+	int k = 0;
+	int a;
+
+	char s[100];
+
+	scanf_s("%d", &n);
+
+	for (i = 0 ; i < n; i++) {
+		scanf("%d, %s", &a, s);
+
+		for (b = 0; b < strlen(s); b++) {
+			for (k = 0; k < a; k++) {
+				printf("%c", s[b]);
+			}
+		}
+		printf("\n");
+	}
+}
+
+
+//1157
+
+#include<stdio.h>
+#include<string.h>
+
+main() {
+	char s[1000000];
+	int a[26] = { 0 };
+	int i = 0;
+	int b = 0;
+	int k = 0;
+	
+
+	scanf_s("%s", s);
+	int c = strlen(s);
+	for (i = 0; i < c; i++) {
+		if ('A' <= s[i] && 'Z' >= s[i]) {
+			a[s[i] - 'A']++;
+		}
+
+		else if ('a' <= s[i] && 'z' >= s[i]) {
+			a[s[i] - 'a']++;
+		}
+	}
+
+	for (i = 0; i < 26; i++) {
+		if (b < a[i]) {
+			b = a[i];
+			k = i;
+		}
+	}
+
+	for (i = 0; i < 26; i++) {
+		if (b == a[i] && i != k) {
+			printf("?\n");
+			return 0;
+		}
+	}
+
+	printf("%c\n", k + 'A');
+	return 0;
+}
+
+
+//1152
+
+#include<stdio.h>
+
+main()
+{
+	char a[1000000] = { 0 };
+	int n = -1;
+	int i = 0;
+
+	while (i != -1) {
+		i = scanf_s("%s", &a[0]);
+		n++;
+	}
+	printf("%d", n);
+	return 0;
+}
+
