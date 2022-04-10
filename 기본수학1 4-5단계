@@ -1,0 +1,45 @@
+//2869
+
+#include <stdio.h>
+main(){
+    int a,b,c;
+    int n=0, d=0;
+    scanf("%d %d %d", &a,&b,&c);
+    
+    if(a==c)
+        printf("1\n");
+    else{
+        n=(c-a)/(a-b);
+        if((c-a)%(a-b)==0)
+            printf("%d",n+1);
+        else
+            printf("%d",n+2);
+    }
+}
+
+//10250
+#include <stdio.h>
+ 
+int main()
+{
+    int p;
+    int i;
+    scanf("%d", &p);
+ 
+    for (i = 0; i < p; i++)
+    {
+        int h, a, n;
+        int one = 1;
+        scanf("%d %d %d", &h, &a, &n);
+        
+        while (n > h)  
+        {
+            if (h < n)  
+            {
+                n -= h;
+                one++;  
+            }
+        }
+        printf("%d\n", (n * 100) + one); 
+    }
+}
