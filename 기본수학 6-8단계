@@ -1,0 +1,125 @@
+//2775
+
+#include <stdio.h>
+main()
+{
+    int x[15][15] = { 0, };
+    int num,k,n;
+   
+    for (int i = 0; i < 15; i++)
+    {
+        x[0][i] = i;
+    }
+
+    for (int i = 1; i < 15; i++)
+    {
+        for (int k = 1; k < 15; k++)
+        {
+            x[i][k] = x[i - 1][k] + x[i][k - 1];
+        }
+    }
+     scanf_s("%d", &num);
+    for (int i = 0; i < num; i++)
+    {
+        scanf_s("%d %d", &k, &n);
+        printf("%d\n", x[k][n]);
+    }
+    return 0;
+}
+
+
+//2839
+
+#include <stdio.h>
+
+main()
+{
+ int sugar;
+ int c = 0; 
+ scanf("%d", &sugar);
+
+ while (1)
+ {
+  if (sugar % 5==0)
+  {
+   c += sugar / 5;
+   break;
+  }
+  sugar -= 3;
+  c++;
+ }
+
+ if (sugar < 0)
+  printf("-1");
+ else
+  printf("%d", c);
+
+ return 0;
+
+}
+
+
+//10757
+
+#include<stdio.h>
+#include<string.h>
+
+void reverse(char* str, int count)
+{
+	char temp;
+	for (int i = 0; i < count / 2; i++)
+	{
+		temp = str[i];
+		str[i] = str[count - i - 1];
+		str[count - i - 1] = temp;
+	}
+}
+
+int main(void)
+{
+	char a[10002] = { 0 };
+	char b[10002] = { 0 };
+	char c[10003];
+	int carry = 0;
+	int len = 0;
+	int chk = 0;
+
+
+	scanf("%s %s", &a, &b);
+
+	len = (strlen(a) > strlen(b)) ? strlen(a) : strlen(b);
+
+	reverse(a,strlen(a));
+	reverse(b, strlen(b));
+
+	for (int i = 0; i < len; i++)
+	{
+		c[i] = (a[i] - '0') + (b[i] - '0') + carry;
+		carry = 0;
+		chk = 0;
+		if (a[i] == 0 || b[i] == 0)
+		{
+			c[i] += '0';
+			if (c[i] > 9)
+			{
+				chk = 1;
+			}
+		}
+		if (c[i] > 9)
+		{
+			carry = 1;
+			c[i] -= 10;
+			chk = 1;
+		}
+	}
+	if (chk == 1)
+	{
+		len++;
+		c[len - 1] = 1;
+	}
+	reverse(c, len);
+	for (int j = 0; j < len; j++)
+	{
+		printf("%d", c[j]);
+	}
+}
