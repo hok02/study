@@ -1,0 +1,88 @@
+//1978
+
+#include <stdio.h>
+
+main() {
+	int test, f=0, c=0;
+	int num;
+	scanf("%d", &test); 
+    
+	for(int i = 0; i < test; i++) {
+		scanf("%d", &num);
+		f= 0;
+        
+		if(num!=1){
+			for (int j = 2; j < num; j++) {
+				if (num % j == 0)
+					f = 1;
+			}
+			if (f== 0) 
+				c++;
+		}
+		else if (num == 2) {
+			c++;
+			f = 0;
+		}
+	}
+	printf("%d\n", c);
+	return 0;
+}
+
+
+//2581
+
+#include <stdio.h>
+main() {
+	int k, min;
+    int sum=0;
+	int a, b;
+    
+	scanf("%d %d", &a, &b);
+		for (int i = a; i <= b; i++) {
+			k= 0;
+			for (int j = 2; j < i; j++) {
+				if (i % j == 0) k = 1;
+			}
+			if (i!=1&&k == 0) sum += i;
+		}
+    
+	if (sum == 0) {
+		printf("-1");
+		return 0;
+	}
+    
+		for (int i = a; i <= b; i++) {
+			k = 0;
+			for (int j = 2; j < i; j++) {
+				if (i % j == 0) k = 1;
+			}
+			if (i != 1&& k == 0) {
+				min = i;
+				break;
+			}
+		}
+	printf("%d\n%d", sum, min);
+	return 0;
+}
+
+
+//11653
+
+#include<stdio.h>
+
+int num; 
+
+main() {
+    scanf("%d", &num);   
+
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            printf("%d\n", i);
+            num /= i;
+            i--;
+        }
+    }
+    
+    if (num > 1) printf("%d", num);
+    return 0;
+}
